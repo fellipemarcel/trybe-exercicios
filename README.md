@@ -1,1 +1,3 @@
-# Meu repositório de exercícios no README.md
+# Repositório de exercícios feitos na Trybe
+
+1. 

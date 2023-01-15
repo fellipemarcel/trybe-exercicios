@@ -1,0 +1,6 @@
+Olá, mundo!
+Este é o meu arquivo de frases.
+Estou adicionando frases aleatórias neste arquivo.
+Estou relembrando alguns comandos do UNIX.
+Neste momento estou usando o BASH como shell.
+Em breve pretendo mudar para o ZSH como shell.

@@ -12,6 +12,7 @@ div:nth-of-type(2) {
 
 div:nth-of-type(3) {
     background-color: chartreuse;
+    height: 200px;
 }
 
 div:nth-of-type(4) {

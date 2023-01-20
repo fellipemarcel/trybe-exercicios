@@ -9,3 +9,35 @@ ol.memorable-phrases li:nth-child(even){
 ol.memorable-phrases li:nth-child(odd) {
     text-transform: uppercase;
 }
+
+h1, h3 {
+    color: red;
+}
+
+h1 em, h2 em {
+    font-size: 40px;
+    border: 1px solid black;
+}
+
+li {
+    font-size: 20px;
+}
+
+li em {
+    font-weight: bold;
+}
+
+/* Este seletor coloca a cor de font azul em todos os elementos exceto do 4 em diante */
+/* #linguagens li:not(:nth-child(n + 4)) {*/
+
+#top-programming-languages li:nth-of-type(-n+3) {
+    color: blue;
+}
+
+ul li span.java {
+    background-color: pink;
+}
+
+#biggest-allies li:hover {
+    font-weight: bold;
+}

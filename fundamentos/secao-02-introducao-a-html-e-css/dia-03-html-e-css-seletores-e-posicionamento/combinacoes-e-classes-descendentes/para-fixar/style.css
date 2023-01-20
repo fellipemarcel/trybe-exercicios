@@ -26,3 +26,11 @@ li {
 li > em {
     font-weight: bold;
 }
+
+#top-programming-languages li:nth-of-type(-n+3) {
+    color: blue;
+}
+
+ul li span.java {
+    background-color: pink;
+}

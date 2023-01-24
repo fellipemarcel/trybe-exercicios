@@ -1,4 +1,3 @@
-const custoDoProduto = null;
-const custoTotalDoProduto = null;
-const valorDeVenda = null;
+const custoDoProduto = 1000;
+const valorDeVendaDoProduto = 1100;
 

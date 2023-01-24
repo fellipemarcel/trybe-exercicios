@@ -1,9 +1,7 @@
 let tasksList = ['Tomar café', 'Reunião', 'Brincar com o cachorro'];
 
-let searchForFirstTask = tasksList[0];
-console.log(searchForFirstTask);
-// Tomar café
+let primeiroItem = tasksList[0];
+console.log(primeiroItem);
 
-let searchForLastTask = tasksList[tasksList.length - 1];
-console.log(searchForLastTask);
-// Brincar com o cachorro
+let ultimoItem = tasksList[tasksList.length - 1];
+console.log(ultimoItem);

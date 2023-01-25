@@ -37,3 +37,13 @@ console.log('Quantidade de números ímpares na array: ' + oddNumbersCount + '.'
 if (oddNumbersCount === 0) {
     console.log('Nenhum valor Ímpar encontrado');
 }
+
+let smallestNumberIs = numbers[0];
+
+for (let smallestNumber = 1; smallestNumber < numbers.length; smallestNumber += 1) {
+    if (numbers[smallestNumber] < smallestNumberIs) {
+        smallestNumberIs = numbers[smallestNumber];
+    }
+}
+
+console.log('O menor número do array é: ' + smallestNumberIs + '.');

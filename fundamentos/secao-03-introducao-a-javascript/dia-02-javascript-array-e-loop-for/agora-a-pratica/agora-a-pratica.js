@@ -9,9 +9,9 @@ for (let index = 0; index < numbers.length; index += 1) {
 let media = soma / numbers.length;
 
 if (media > 20) {
-    console.log('Valor maior que 20');
+    console.log('O valor da média dos números é maior que 20.');
 } else {
-    console.log('Valor menor ou igual a 20');
+    console.log('O valor da média dos números é menor que 20.');
 }
 
 let biggestNumberIs = numbers[0];
@@ -22,4 +22,18 @@ for (let biggestNumber = 1; biggestNumber < numbers.length; biggestNumber += 1) 
     }
 }
 
-console.log(biggestNumberIs);
+console.log('O maior número do array é: ' + biggestNumberIs + '!');
+
+let oddNumbersCount = 0;
+
+for (let oddNumber = 0; oddNumber < numbers.length; oddNumber += 1) {
+    if (numbers[oddNumber] % 2 !== 0) {
+        oddNumbersCount += 1;
+    }
+}
+
+console.log('Quantidade de números ímpares na array: ' + oddNumbersCount + '.');
+
+if (oddNumbersCount === 0) {
+    console.log('Nenhum valor Ímpar encontrado');
+}

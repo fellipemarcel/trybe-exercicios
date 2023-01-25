@@ -13,3 +13,13 @@ if (media > 20) {
 } else {
     console.log('Valor menor ou igual a 20');
 }
+
+let biggestNumberIs = numbers[0];
+
+for (let biggestNumber = 1; biggestNumber < numbers.length; biggestNumber += 1) {
+    if (numbers[biggestNumber] > biggestNumberIs) {
+        biggestNumberIs = numbers[biggestNumber];
+    }
+}
+
+console.log(biggestNumberIs);

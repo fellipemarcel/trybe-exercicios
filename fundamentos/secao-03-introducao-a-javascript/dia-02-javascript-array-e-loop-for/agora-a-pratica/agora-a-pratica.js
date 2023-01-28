@@ -46,4 +46,16 @@ for (let smallestNumber = 1; smallestNumber < numbers.length; smallestNumber += 
     }
 }
 
-console.log('O menor número do array é: ' + smallestNumberIs + '.');
+console.log('O menor número do array é: ' + smallestNumberIs + '.'); 
+
+const oneToTwentyFiveArr = [];
+
+for (let oneToTwentyFive = 1; oneToTwentyFive <= 25; oneToTwentyFive += 1) {
+    oneToTwentyFiveArr.push(oneToTwentyFive);
+}
+
+console.log(oneToTwentyFiveArr);
+
+for (let dividend = 0; dividend < oneToTwentyFiveArr.length; dividend += 1) {
+    console.log(oneToTwentyFiveArr[dividend] / 2);
+}

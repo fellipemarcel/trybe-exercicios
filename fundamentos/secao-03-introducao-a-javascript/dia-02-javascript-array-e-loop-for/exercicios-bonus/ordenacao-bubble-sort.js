@@ -1,23 +1,27 @@
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let numbersCrec = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
-for (let index = 1; index < numbers.length; index += 1) {
+for (let index = 1; index < numbersCrec.length; index += 1) {
      for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
-         if (numbers[index] > numbers[secondIndex]) {
-             let position = numbers[index];
-            numbers[index] = numbers[secondIndex];
-            numbers[secondIndex] = position;
+         if (numbersCrec[index] < numbersCrec[secondIndex]) {
+             let position = numbersCrec[index];
+            numbersCrec[index] = numbersCrec[secondIndex];
+            numbersCrec[secondIndex] = position;
         }
      }
  }
 
-console.log(numbers);
+console.log(numbersCrec);
 
-let novoArr = [];
+let numbersDec = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
-for (let index = 0; index < numbers.length; index += 1) {
-    for (let segundoIndex = 1; segundoIndex < index; index += 1) {
-        novoArr.push(numbers[index] * numbers[segundoIndex]);
-    }
-}
+for (let index = 1; index < numbersDec.length; index += 1) {
+     for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
+         if (numbersDec[index] > numbersDec[secondIndex]) {
+             let position = numbersDec[index];
+            numbersDec[index] = numbersDec[secondIndex];
+            numbersDec[secondIndex] = position;
+        }
+     }
+ }
 
-console.log(novoArr);
+console.log(numbersDec);

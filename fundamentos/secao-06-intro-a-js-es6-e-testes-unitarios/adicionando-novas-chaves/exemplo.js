@@ -10,10 +10,18 @@ const customer2 = {
   job: 'Medic',
 };
 
-const adicionaPropriedade = (objeto, chave, valor) => {
-    objeto[chave] = valor;
+const estudante = {
+  name: 'Fellipe Marcel',
 };
 
-adicionaPropriedade(customer1, 'lastName', 'Silva');
+estudante.email = 'fmrclms@gmail.com';
+estudante['telefone'] = '71999453156';
 
-console.table(customer1);
+const addProperty = (obj, property, value) => {
+  obj[property] = value;
+};
+
+addProperty(estudante, 'linkedIn', 'https://www.linkedin.com/in/fellipe-marcel-99961a251/');
+addProperty(estudante, 'gitHub', 'https://github.com/fellipemarcel');
+
+console.log(estudante);

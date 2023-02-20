@@ -69,5 +69,3 @@ const getNumberOfStudentsMath = (obj) => {
   }
   return total;
 };
-
-console.log(getNumberOfStudentsMath(allLessons));

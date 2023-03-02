@@ -7,6 +7,6 @@ const emailListInData = [
   
 //emailListInData.forEach((email) => console.log(`O email ${email} está cadastrado em nosso banco de dados!`));
 
-const showEmails = (element, index) => console.log(`E-mail ${index}, ${element}`);
+const showEmails = (element, index) => console.log(`E-mail: ${element}`);
 
 emailListInData.forEach(showEmails);

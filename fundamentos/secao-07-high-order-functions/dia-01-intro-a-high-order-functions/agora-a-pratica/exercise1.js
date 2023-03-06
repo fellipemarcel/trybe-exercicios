@@ -98,5 +98,3 @@ const authorUnique = () => {
     (someBooks.author.birthYear === book.author.birthYear)
     && someBooks.author.name !== book.author.name));
 };
-
-console.log(authorUnique());

@@ -13,4 +13,3 @@ const users = [
 
 const filtering = () => 
 users.filter((user) => user.username === 'fellipemarcel');
-console.log(filtering());

@@ -3,7 +3,7 @@ import { Component } from "react";
 class About extends Component {
     render() {
         return (
-            <div>
+            <>
                 <h1>
                     Fellipe Marcel
                 </h1>
@@ -20,7 +20,7 @@ class About extends Component {
                     <li>Git e Github</li>
                     <li>React</li>
                 </ul>
-            </div>
+            </>
         );
     }
 }

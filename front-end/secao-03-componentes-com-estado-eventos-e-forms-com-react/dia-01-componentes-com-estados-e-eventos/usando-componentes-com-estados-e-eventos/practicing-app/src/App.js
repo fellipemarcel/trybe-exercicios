@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 
 class App extends React.Component {
   state = {
@@ -6,24 +7,21 @@ class App extends React.Component {
     username: '',
   };
 
-  increaseClickCount = () => {
-    this.setState((currState, _props) => ({ clickCount: currState.clickCount + 1 }))
+  getButtonColor = (num) => {
+    return num % 2 === 0 ? 'green' : 'white';
   };
 
-  changeUserName = (name) => {
-    this.setState((currState, _props) => ({ username: currState.username = name }))
+  increaseClickCount = () => {
+    this.setState((currState, _props) => ({ clickCount: currState.clickCount + 1 }));
   };
 
   render() {
-    const { clickCount, username } = this.state;
+    const { clickCount } = this.state;
     return (
       <div>
-        <h1>Nome: { username }</h1>
         <h2>Contador: { clickCount }</h2>
         <button 
-        onClick={() => {
-          this.increaseClickCount(); 
-          this.changeUserName('Fellipe')}}>Aumentar</button>
+        onClick={ this.increaseClickCount } style={ { backgroundColor: this.getButtonColor(clickCount) }}>Aumentar</button>
       </div>
     )
   }

@@ -1,0 +1,29 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.Form__Container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: auto;
+}
+
+.Form__Content {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.123);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 20px;
+}
+
+select,
+input {
+  margin: 0 0 20px 20px;
+  padding: 10px;
+}

@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import Name from './Name';
+import Age from './Age';
+import Phone from './Phone';
+import Email from './Email';
+import Description from './Description';
+import Agreement from './Agreement';
+
 import './App.css';
 
 class App extends Component {
@@ -26,35 +33,29 @@ class App extends Component {
         <form className='Form__Content'>
           <fieldset>
             <legend>Dados pessoais:</legend>
-            <label>
-              Digite o seu nome:
-              <input type='text' name='name' onChange={this.handleChange}></input>
-            </label>
-            <label>
-              Informe a sua idade:
-              <input type='number' name='age' onChange={this.handleChange}></input>
-            </label>
-            <label>
-              Informe o seu telefone:
-              <input type='tel' name='phone' onChange={this.handleChange}></input>
-            </label>
-            <label>
-              Digite o seu e-mail:
-              <input type='email' name='email' onChange={this.handleChange}></input>
-            </label>
+            <Name 
+            value={ this.state.name } 
+            handleChange={ this.handleChange }/>
+            <Age 
+            value={ this.state.age } 
+            handleChange={ this.handleChange }/>
+            <Phone 
+            value={ this.state.phone } 
+            handleChange={ this.handleChange }/>
+            <Email 
+            value={ this.state.email } 
+            handleChange={ this.handleChange }/>            
           </fieldset>
-          <label>
-            Fale um pouco sobre você:
-            <textarea name='description' onChange={this.handleChange}></textarea>
-          </label>
-          <label>
-            Aceita os termos?
-            <input type='checkbox' name='agreement' onChange={this.handleChange}></input>
-          </label>
-          <label>
-            Enviar foto:
-            <input type='file' accept='image/png, image/jpeg'></input>
-          </label>
+            <Description 
+            value={ this.state.description } 
+            handleChange={ this.handleChange }/>          
+            <Agreement 
+            value={ this.state.agreement } 
+            handleChange={ this.handleChange }/>
+            <label>
+                Enviar foto:
+                <input type='file' accept='image/png, image/jpeg'></input>
+            </label>
         </form>
       </div>
     )

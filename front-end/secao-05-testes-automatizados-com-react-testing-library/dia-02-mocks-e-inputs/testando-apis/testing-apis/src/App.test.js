@@ -59,7 +59,7 @@ it('ao renderizar a página, a primeira piada é exibida na tela', async () => {
 
   render(<App />);
   expect(await screen.findByText(firstJoke.joke)).toBeInTheDocument();
-  expect(global.fetch).toBeCalledTimes(1);
+  expect(global.fetch).toHaveBeenCalledTimes(1);
   
   global.fetch.mockResolvedValueOnce({
     json: jest.fn().mockResolvedValue(secondJoke),
@@ -69,5 +69,5 @@ it('ao renderizar a página, a primeira piada é exibida na tela', async () => {
   userEvent.click(newJokeBtn);
   expect(await screen.findByText(secondJoke.joke)).toBeInTheDocument();
   expect(screen.queryByText(firstJoke)).not.toBeInTheDocument();
-  expect(global.fetch).toBeCalledTimes(2);
+  expect(global.fetch).toHaveBeenCalledTimes(2);
 });

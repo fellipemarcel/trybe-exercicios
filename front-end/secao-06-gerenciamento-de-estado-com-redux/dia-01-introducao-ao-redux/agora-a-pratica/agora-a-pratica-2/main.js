@@ -1,24 +1,57 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { legacy_createStore as createStore } from "redux";
+import { composeWithDevTools } from "@redux-devtools/extension";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const INITIAL_STATE = {
+  status: 'Offline',
+  theme: 'dark',
+};
 
-setupCounter(document.querySelector('#counter'))
+const reducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case 'LIGHT_MODE':
+      return {
+        ...state,
+        theme: state.theme === 'dark' ? 'light' : 'dark',
+      };
+    case 'GO_ONLINE':
+      return {
+        ...state,
+        status: state.status === 'Offline' ? 'Online' : 'Offline',
+      };
+    default:
+      return state
+  }
+};
+
+const store = createStore(reducer, composeWithDevTools());
+
+const themeButton = document.getElementById('toggle-theme');
+const statusButton = document.getElementById('toggle-status');
+
+themeButton.addEventListener('click', () => {
+  store.dispatch({ type: 'LIGHT_MODE' })
+});
+
+statusButton.addEventListener('click', () => {
+  store.dispatch({ type: 'GO_ONLINE' })
+});
+
+store.subscribe(() => {
+  const { status, theme } = store.getState();
+  const body = document.getElementById('body-element');
+  document.getElementById('status').innerHTML = status;
+  if (theme === 'light') {
+    body.style.backgroundColor = '#ffffff';
+    body.style.color = '#000000';
+    themeButton.innerHTML = 'Dark Mode';
+  } else {
+    body.style.backgroundColor = '#333333';
+    body.style.color = '#ffffff';
+    themeButton.innerHTML = 'Light Mode';
+  };
+  if (status === 'Offline') {
+    statusButton.innerHTML = 'Ficar online';
+  } else {
+    statusButton.innerHTML = 'Ficar offline';
+  };
+});

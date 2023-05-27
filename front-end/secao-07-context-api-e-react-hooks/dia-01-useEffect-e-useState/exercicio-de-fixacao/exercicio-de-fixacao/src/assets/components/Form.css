@@ -1,0 +1,24 @@
+div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 50vw;
+}
+
+input {
+    margin: 10px;
+}
+
+button {
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 10px;
+}

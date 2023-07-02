@@ -1,0 +1,41 @@
+version: "3"  # Versão do formato do arquivo Docker Compose
+
+services:  # Definição dos serviços da aplicação
+
+  frontend:  # Definição do serviço "frontend"
+    build: frontend/  # Diretório onde o Dockerfile do frontend está localizado
+    restart: always  # Reiniciar o contêiner sempre que ele for finalizado
+    ports:
+      - 3000:3000  # Mapear a porta 3000 do host para a porta 3000 do contêiner
+    depends_on:
+      - backend  # Indicar que este serviço depende do serviço "backend"
+    volumes:
+      - ./frontend/src:/frontend/src  # Montar um volume para o diretório do código-fonte do frontend dentro do contêiner
+    networks:
+      - rede-virtual-1  # Associar este serviço à rede virtual "rede-virtual-1"
+
+  backend:  # Definição do serviço "backend"
+    build: backend/  # Diretório onde o Dockerfile do backend está localizado
+    restart: always  # Reiniciar o contêiner sempre que ele for finalizado
+    ports:
+      - 3001:3001  # Mapear a porta 3001 do host para a porta 3001 do contêiner
+    environment:
+      - DB_HOST=database  # Definir a variável de ambiente "DB_HOST" com o valor "database"
+    depends_on:
+      - database  # Indicar que este serviço depende do serviço "database"
+    networks:
+      - rede-virtual-1  # Associar este serviço à rede virtual "rede-virtual-1"
+      - rede-virtual-2  # Associar este serviço à rede virtual "rede-virtual-2"
+
+  database:  # Definição do serviço "database"
+    image: betrybe/docker-compose-example-database:v1  # Imagem Docker a ser usada para este serviço
+    restart: always  # Reiniciar o contêiner sempre que ele for finalizado
+    networks:
+      - rede-virtual-2  # Associar este serviço à rede virtual "rede-virtual-2"
+
+volumes:  # Definição de volumes
+  dados-do-banco:  # Definir um volume chamado "dados-do-banco"
+
+networks:  # Definição de redes virtuais
+  rede-virtual-1:  # Definir uma rede virtual chamada "rede-virtual-1"
+  rede-virtual-2:  # Definir uma rede virtual chamada "rede-virtual-2"
